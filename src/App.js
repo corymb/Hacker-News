@@ -10,13 +10,16 @@ class ListView extends Component {
       return (
         <span> { 
           this.props.data.hits.map((i) => (
-            <p key={i.objectID }>{i.title}</p>)
+            <p key={i.objectID}>
+              <a href={i.url}>{i.title}</a>
+            </p>
+          )
           )}
         </span>
       )
     }
     else {
-      return <p>Loading...</p>
+      return (<p>Loading...</p>)
     }
   }
 }
